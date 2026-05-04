@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios A, B, C e D</title>
+</head>
+<body>
+    <h1>Exercícios A, B, C e D</h1>
+</body>
+
+<script>
+    // a) Elaborar um programa que leia um número. Calcule e informe os seus vizinhos, ou seja, o número anterior e o número posterior.
+    const numero = Number(prompt("Digite um número:"));
+    const vizinhoAnterior = numero - 1;
+    const vizinhoPosterior = numero + 1;
+    alert(`O número anterior é ${vizinhoAnterior} e o número posterior é ${vizinhoPosterior}.`);
+
+    // b) Elaborar um programa para uma pizzaria, o qual leia o valor total de uma conta e quantos clientes vão pagá-la. Calcule e informe o valor a ser pago por cliente.
+    const valorTotal = Number(prompt("Digite o valor total da conta:"));
+    const quantidadeClientes = Number(prompt("Digite a quantidade de clientes:"));
+    const valorPorCliente = valorTotal / quantidadeClientes;
+    alert(`O valor a ser pago por cliente é de R$ ${valorPorCliente.toFixed(2)}.`);
+
+    // c) Elaborar um programa para uma loja, o qual leia o preço de um produto e informe as opções de pagamento da loja. Calcule e informe o valor para pagamento à vista com 10% de desconto e o valor em 3x.
+    const precoProduto = Number(prompt("Digite o preço do produto:"));
+    const valorAVista = precoProduto * 0.9; // 10% de desconto
+    const valorParcelado = precoProduto / 3; // valor em 3x
+    alert(`O valor para pagamento à vista com 10% de desconto é R$ ${valorAVista.toFixed(2)} e o valor em 3x é R$ ${valorParcelado.toFixed(2)} por parcela.`);
+
+    // d) Elaborar um programa que leia 2 notas de um aluno em uma disciplica. Calcule e informe a média das notas.
+    const nota1 = Number(prompt("Digite a primeira nota do aluno:"));
+    const nota2 = Number(prompt("Digite a segunda nota do aluno:"));
+    const media = (nota1 + nota2) / 2;
+    alert(`A média das notas do aluno é ${media.toFixed(2)}.`);
+</script>
+</html>
