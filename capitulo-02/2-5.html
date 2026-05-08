@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmácia</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1 {
+        color: #2E8B57;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        margin-bottom: 10px;
+        padding: 5px;
+        width: 200px;
+    }
+
+    button {
+        padding: 5px 10px;
+        background-color: #2E8B57;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #3CB371;
+    }
+
+    .outResp {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <h1>Farmácia JS</h1>
+    <p>Bem-vindo à Farmácia JS! Aqui você pode encontrar uma variedade de medicamentos e produtos de saúde. Navegue pelo nosso catálogo e encontre o que precisa para cuidar da sua saúde.</p>
+
+    <form>
+        <label>Nome do Medicamento:</label>
+        <input type="text" id="inMedicamento" name="inMedicamento">
+        <label>Quantidade:</label>
+        <input type="number" id="inQuantidade" name="inQuantidade" step="1">
+        <button type="submit">Mostrar Promoção</button>
+    </form>
+    <h3 class="outResp"></h3>
+</body>
+
+<script>
+    const form = document.querySelector('form');
+    const outResp = document.querySelector('.outResp');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const medicamento = document.getElementById('inMedicamento').value;
+        const quantidade = parseInt(document.getElementById('inQuantidade').value);
+        let promocao = '';
+
+        if (medicamento && quantidade >= 2) {
+            promocao = 'Promoção: Compre 2 e leve 3!';
+        } else {
+            promocao = 'Sem promoção para este medicamento.';
+        }
+        outResp.textContent = promocao;
+    })
+</script>
+
+</html>

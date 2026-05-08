@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 400px;
+    }
+    form {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input {
+        padding: 5px;
+        width: 200px;
+    }
+    button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body>
+    <h1>Exercício 3</h1>
+    <form>
+        <label for="inVeiculo">Veículo:</label>
+        <input type="text" id="inVeiculo" name="inVeiculo"><br><br>
+
+        <label for="inPreco">Preço do veículo:</label>
+        <input type="number" id="inPreco" name="inPreco"><br><br>
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    <h3 class="outResp1"></h3>
+    <h3 class="outResp2"></h3>
+    <h3 class="outResp3"></h3>
+    
+</body>
+<script>
+    const form = document.querySelector('form');
+    const resp1 = document.querySelector('.outResp1');
+    const resp2 = document.querySelector('.outResp2');
+    const resp3 = document.querySelector('.outResp3');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const veiculo = form.inVeiculo.value;
+        const preco = Number(form.inPreco.value);
+
+        const entrada = preco*0.50;
+        const parcela = (preco*0.50)/12;
+
+        resp1.innerText = `Veículo: ${veiculo}`;
+        resp2.innerText = `Entrada: R$ ${entrada.toFixed(2)}`;
+        resp3.innerText = `12 parcelas de R$ ${parcela.toFixed(2)}`;
+    })
+</script>
+</html>

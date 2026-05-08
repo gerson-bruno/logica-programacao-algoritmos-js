@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 400px;
+    }
+    form {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input {
+        padding: 5px;
+        width: 200px;
+    }
+    button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body>
+    <h1>Restaurante JS</h1>
+    <form>
+        <label>Buffet por Kg - R$:</label>
+        <input type="number" id="inValor" name="inValor" step="0.01">
+        <label>Consumo do Cliente (Gramas):</label>
+        <input type="number" id="inConsumo" name="inConsumo" step="0.01">
+        <button type="submit">Calcular</button>
+    </form>
+    <h3 class="outResp"></h3>
+</body>
+
+<script>
+    const form = document.querySelector('form');
+    const resp = document.querySelector('.outResp');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const valor = parseFloat(document.getElementById('inValor').value);
+        const consumo = parseFloat(document.getElementById('inConsumo').value);
+
+        if (valor <= 0 || consumo <= 0) {
+            resp.textContent = 'Por favor, insira valores válidos.';
+            return;
+        }
+
+        const total = (valor * consumo) / 1000;
+        resp.textContent = `O valor a ser pago é: R$ ${total.toFixed(2)}`;
+    });
+
+</script>
+</html>

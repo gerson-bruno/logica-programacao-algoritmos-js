@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado JS</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1 {
+        color: #2c3e50;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    input {
+        padding: 5px;
+        margin-top: 5px;
+        width: 200px;
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #2980b9;
+    }
+
+    h3 {
+        margin-top: 20px;
+        color: #27ae60;
+    }
+</style>
+
+<body>
+    <h1>Supermercado JS</h1>
+    <p>Bem-vindo ao Supermercado JS! Aqui você pode fazer compras online e aproveitar as melhores ofertas.</p>
+    <p>O terceiro item sai com 50% de desconto!</p>
+
+    <form>
+        <label>Produto:</label>
+        <input type="text" id="inProduto" name="inProduto">
+        <label>Preço:</label>
+        <input type="number" id="inPreco" name="inPreco" step="0.01">
+        <button type="submit">Ver Promoção</button>
+    </form>
+
+    <h3 id="outPromocao"></h3>
+    <h3 id="outPreco"></h3>
+</body>
+
+<script>
+    const form = document.querySelector('form');
+    const inProduto = document.getElementById('inProduto');
+    const inPreco = document.getElementById('inPreco');
+    const outPromocao = document.getElementById('outPromocao');
+    const outPreco = document.getElementById('outPreco');
+
+    form.addEventListener('submit',(e) => {
+        e.preventDefault();
+
+        const produto = inProduto.value;
+        const preco = parseFloat(inPreco.value);
+        const precoPromocional = preco / 2;
+
+        outPromocao.textContent = `${produto} - Leve 3 por R$ ${(preco * 2 + precoPromocional).toFixed(2)}`;
+        outPreco.textContent = `O terceiro produto custa: R$ ${precoPromocional.toFixed(2)}`;
+    });
+</script>
+</html>

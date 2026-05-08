@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Converter em Horas e Minutos</title>
+  </head>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0 auto;
+      padding: 20px;
+      max-width: 400px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    fieldset {
+      margin-bottom: 10px;
+      border: none;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input {
+      padding: 5px;
+      width: 200px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <body>
+    <h1>Cine JS: Filmes em Cartaz</h1>
+    <form>
+      <fieldset>
+        <label>Título do Filme:</label>
+        <input type="text" id="titulo" name="titulo" />
+      </fieldset>
+      <fieldset>
+        <label>Duração (minutos):</label>
+        <input type="number" id="duracao" name="duracao" />
+      </fieldset>
+      <button type="button" onclick="converterHorasMinutos()">Converter</button>
+    </form>
+    <h3 id="resultadoNome"></h3>
+    <h3 id="resultadoDuracao"></h3>
+  </body>
+  <script>
+    function converterHorasMinutos() {
+      const titulo = document.getElementById('titulo').value;
+      const duracao = parseInt(document.getElementById('duracao').value);
+
+      const horas = Math.floor(duracao / 60);
+      const minutos = duracao % 60;
+      
+      document.getElementById('resultadoNome').textContent =
+        `Título do Filme: ${titulo}`;
+      document.getElementById('resultadoDuracao').textContent =
+        `Duração: ${horas} horas e ${minutos} minutos`;
+    }
+  </script>
+</html>

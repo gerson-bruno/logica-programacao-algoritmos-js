@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício - Exemplo 2.1</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 400px;
+        background-color: #f9f9f9;
+    }
+    h1 {
+        color: #333;
+    }
+    form {
+        margin-top: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"] {
+        padding: 8px;
+        width: 200px;
+        margin-bottom: 10px;
+    }
+    button {
+        padding: 8px 16px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    #mensagem {
+        margin-top: 20px;
+        color: #2a2929;
+    }
+
+</style>
+<body>
+    <h1>Olá para você!</h1>
+    <form>
+        <label for="nome">Digite seu nome:</label>
+        <input type="text" id="nome" name="nome">
+        <button type="button" onclick="exibirMensagem()">Enviar</button>
+    </form>
+    <h2 id="mensagem"></h2>
+</body>
+
+<script>
+    function exibirMensagem() {
+        const inputNome = document.querySelector('#nome');
+        const nome = inputNome.value;
+        const msgElemento = document.querySelector('#mensagem');
+        msgElemento.innerHTML = `Olá, <span style="color: #007BFF;">${nome}</span>! Seja bem-vindo(a)!`;
+    }
+</script>
+</html>
