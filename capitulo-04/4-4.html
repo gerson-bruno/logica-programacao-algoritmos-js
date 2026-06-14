@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dofus - Hora</title>
+    <script src="js/4-4.js" defer></script>
+    <link rel="stylesheet" href="css/4-4.css" />
+  </head>
+  <body>
+    <header>
+      <img src="img/exe4-4-1 (1).png" alt="Dofus Logo" class="logo" />
+    </header>
+    <aside>
+      <img src="img/exe4-4-2.png" alt="Eniripsa" />
+      <p>Que Eniripsa te abençõe!</p>
+    </aside>
+    <main>
+      <h1>Dofus - Hora</h1>
+      <p>Nunca mais perca o tempo dos seus eventos:</p>
+      <p>
+        Informe a hora atual no Brasil (formato 24h) e veja qual o horário da
+        França!
+      </p>
+      <form>
+        <p>
+          Hora do Brasil:
+          <input
+            type="time"
+            id="horaBrasil"
+            min="00:00"
+            max="23:59"
+            step="60"
+            required
+          />
+        </p>
+        <input type="submit" value="Exibir horário" />
+      </form>
+      <h3 id="resultado"></h3>
+    </main>
+  </body>
+</html>
